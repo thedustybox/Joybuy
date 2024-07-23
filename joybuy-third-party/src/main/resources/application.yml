@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-Key:
+      secret-key:
+      oss:
+        endpoint: oss-cn-shenzhen.aliyuncs.com
+        bucket: joybuy-underjune
+
+      sms:
+        host: https://gyytz.market.alicloudapi.com
+        path: /sms/smsSend
+        appCode:
+        smsSignId:
+        templateId:
+
+  application:
+    name: joybuy-third-party
+
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.56.10:3306/joybuy_pms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 30000
+
+
+

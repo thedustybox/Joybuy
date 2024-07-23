@@ -1,0 +1,86 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+
+        -  id: product_route
+           uri: lb://joybuy-product
+           predicates:
+             - Path=/api/product/**,/hello
+           filters:
+             - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        -  id: coupon_route
+           uri: lb://joybuy-coupon
+           predicates:
+             - Path=/api/coupon/**,/hello
+           filters:
+             - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: third_party_route
+          uri: lb://joybuy-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: member_route
+          uri: lb://joybuy-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://joybuy-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+        - id: joybuy_host_route
+          uri: lb://joybuy-product
+          predicates:
+            - Host=joybuy.com,item.joybuy.com
+
+        - id: joybuy_search_route
+          uri: lb://joybuy-search
+          predicates:
+            - Host=search.joybuy.com
+
+        - id: joybuy_auth_route
+          uri: lb://joybuy-auth-server
+          predicates:
+            - Host=auth.joybuy.com
+
+        - id: joybuy_cart_route
+          uri: lb://joybuy-cart
+          predicates:
+            - Host=cart.joybuy.com
+
+        - id: joybuy_order_route
+          uri: lb://joybuy-order
+          predicates:
+            - Host=order.joybuy.com
+
+        - id: joybuy_member_route
+          uri: lb://joybuy-member
+          predicates:
+            - Host=member.joybuy.com
+
+        - id: joybuy
+          uri: lb://joybuy-seckill
+          predicates:
+            - Host=seckill.joybuy.com
+
+
+logging:
+  level:
+    com.thedustybox.joybuy: debug

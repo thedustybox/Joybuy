@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.thedustybox.joybuy</groupId>
+    <artifactId>joybuy</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>joybuy</name>
+    <description>服务聚会</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>joybuy-ware</module>
+        <module>joybuy-product</module>
+        <module>joybuy-order</module>
+        <module>joybuy-member</module>
+        <module>joybuy-coupon</module>
+        <module>joybuy-common</module>
+        <module>renren-generator</module>
+        <module>renren-fast</module>
+        <module>joybuy-third-party</module>
+        <module>joybuy-gateway</module>
+        <module>joybuy-search</module>
+        <module>joybuy-seckill</module>
+    </modules>
+
+
+</project>
